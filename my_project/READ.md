@@ -16,7 +16,8 @@ Installation:
 
 
 1.Clone the project:
-git clone https://github.com/yourusername/my_project.git
+git clone https://github.com/aidinsh7/dockerize_flask_redis_elastic_postgresql/tree/main/my_project
+
 cd my_project
 
 2.Build and start services:
