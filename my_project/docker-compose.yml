@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+  app:
+    build: ./app
+    ports:
+      - "5000:5000"
+    depends_on:
+      - db
+      - redis
+      - elasticsearch
+
+  db:
+    image: postgres:13
+    environment:
+      POSTGRES_DB: database_test
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: your_password
+    ports:
+      - "5432:5432"
+
+  redis:
+    image: redis:6
+    ports:
+      - "6379:6379"
+
+  elasticsearch:
+    image: elasticsearch:7.10.1
+    environment:
+      - discovery.type=single-node
+    ports:
+      - "9200:9200"
